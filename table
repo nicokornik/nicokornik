@@ -1,0 +1,43 @@
+private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+       
+       if(jTable1.getSelectedColumn()==1)
+               {
+               tblModel.removeRow(jTable1.getSelectedRow());              
+               }
+       
+       else
+       {
+           if(jTable1.getRowCount()==0)
+           {
+           JOptionPane.showMessageDialog(this, "Table Is Empty");
+           }
+           else
+           {
+               JOptionPane.showMessageDialog(this, "Please Select Single Row For Delete");
+           }
+           
+       }
+    }                                        
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       if(jTextField1.getText().equals(0)||jTextField2.getText().equals(0)||jTextField3.getText().equals(0))  
+      {
+      JOptionPane.showMessageDialog(this, "Pleas Input All Data");
+      
+      }
+      else
+      {
+      String data [] = {jTextField1.getText(),jTextField2.getText(),jTextField3.getText()};
+      
+      DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+      
+      tblModel.addRow(data);
+      
+      JOptionPane.showMessageDialog(this, "Data Added Successfully!");
+      }
